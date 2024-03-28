@@ -3,8 +3,8 @@ use std::thread;
 use std::thread::JoinHandle;
 use crate::wheel::{get_wheel, Wheel};
 
-pub fn stream() -> impl Iterator<Item=usize> {
-    PrimeIterator::new()
+pub fn stream(thread_count: usize) -> impl Iterator<Item=usize> {
+    PrimeIterator::new(thread_count)
 }
 
 struct PrimeIterator {
@@ -15,10 +15,11 @@ struct PrimeIterator {
     arc_primes: Arc<Vec<usize>>,
     segment: usize,
     cursor: i32,
+    thread_count: usize,
 }
 
 impl PrimeIterator {
-    fn new() -> Self {
+    fn new(thread_count: usize) -> Self {
         let wheel = get_wheel(7);
         Self {
             sieve: PrimeIterator::initialize_sieve(&wheel),
@@ -28,6 +29,7 @@ impl PrimeIterator {
             segment: 1,
             cursor: -1,
             arc_primes: Arc::new(vec![]),
+            thread_count,
         }
     }
 
@@ -149,10 +151,9 @@ impl PrimeIterator {
     }
 
     fn extend_in_parallel(&mut self) {
-        //println!("Expanding primes in range {} - {}...", self.segment * self.wheel.circumference(), (self.segment + THREAD_COUNT) * self.wheel.circumference());
+        //  println!("Expanding primes in range {} - {}...", self.segment * self.wheel.circumference(), (self.segment + self.thread_count) * self.wheel.circumference());
 
-        const THREAD_COUNT: usize = 128;
-        (0..THREAD_COUNT)
+        (0..self.thread_count)
             .map(|i| {
                 let segment = self.segment;
                 let sieve = self.sieve.clone();
@@ -169,7 +170,7 @@ impl PrimeIterator {
                 self.primes.extend(handle.join().unwrap())
             });
 
-        self.segment += THREAD_COUNT;
+        self.segment += self.thread_count;
     }
 }
 
@@ -196,7 +197,7 @@ mod tests {
     use super::stream;
 
     fn test_segment(start: usize, numbers: [usize; 10]) {
-        let mut prime_iterator = stream();
+        let mut prime_iterator = stream(32);
         for _ in 0..start {
             prime_iterator.next();
         }

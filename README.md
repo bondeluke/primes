@@ -6,7 +6,7 @@ Inspired by [Prime Streaming (PG-13)](https://www.codewars.com/kata/prime-stream
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 1000000
 The 1,000,000th prime number is 15,485,863
-Duration: 0.038s
+Duration: 0.013s
 ```
 ## Finding 50,000,000 primes in less than 3 seconds ✅
 Inspired by [Prime Streaming (NC-17)](https://www.codewars.com/kata/prime-streaming-nc-17/)
@@ -39,8 +39,7 @@ In progress...
 ## Parallelization
 ```rust
 fn extend_in_parallel(&mut self) {
-    const THREAD_COUNT: usize = 128;
-    (0..THREAD_COUNT)
+    (0..self.thread_count)
         .map(|i| {
             let segment = self.segment;
             let sieve = self.sieve.clone();
@@ -57,6 +56,6 @@ fn extend_in_parallel(&mut self) {
             self.primes.extend(handle.join().unwrap())
         });
 
-    self.segment += THREAD_COUNT;
+    self.segment += self.thread_count; 
 }
 ```

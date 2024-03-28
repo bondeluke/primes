@@ -9,13 +9,18 @@ mod wheel;
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    let count: usize = match args.len() {
-        1 => 1_000_000,
-        _ => args[1].parse::<usize>().unwrap()
+    let count: usize = match args.len() > 1 {
+        true => args[1].parse::<usize>().unwrap(),
+        false => 1_000_000,
+    };
+
+    let thread_count: usize = match args.len() > 2 {
+        true => args[2].parse::<usize>().unwrap(),
+        false => if count > 1000000 { 128 } else { 32 },
     };
 
     let start_time = Instant::now();
-    let mut prime_iterator = stream();
+    let mut prime_iterator = stream(thread_count);
     for _ in 1..count {
         prime_iterator.next();
     }
