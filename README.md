@@ -22,7 +22,7 @@ This repository is dedicated to finding prime numbers very quickly.
   - Inspired by [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
 
 # Techniques
-One of the quickest and most well-known strategies for finding prime numbers is the Sieve of Eratosthenes. I take this basic concept, and apply [sieve segmentation](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes), [wheel factorization](https://en.wikipedia.org/wiki/Wheel_factorization), and parallelization on top if it.
+One of the quickest and most well-known strategies for finding prime numbers is the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). I take this basic concept, and apply sieve segmentation, [wheel factorization](https://en.wikipedia.org/wiki/Wheel_factorization), and parallelization on top if it.
 ## Sieve of Eratosthenes
 In progress...
 ## Segemented Sieve
