@@ -2,8 +2,9 @@
 I love prime numbers. This repository is dedicated to finding the very quickly.
 - Finding 1,000,000 primes in less than a few seconds ✅
   - Inspired by [Prime Streaming (PG-13)](https://www.codewars.com/kata/5519a584a73e70fa570005f5)
-  - ```
-C:\Users\Luke\projects\primes> .\generate_primes.exe 1000000
+  -
+    ```
+    C:\Users\Luke\projects\primes> .\generate_primes.exe 1000000
     The 1,000,000th prime number is 15,485,863
     Duration: 0.038s
     ```
