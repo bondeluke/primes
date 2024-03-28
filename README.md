@@ -29,8 +29,6 @@ One of the quickest and most well-known strategies for finding prime numbers is 
 ## Parallelization
 ```rust
     fn extend_in_parallel(&mut self) {
-        //println!("Expanding primes in range {} - {}...", self.segment * self.wheel.circumference(), (self.segment + THREAD_COUNT) * self.wheel.circumference());
-
         const THREAD_COUNT: usize = 128;
         (0..THREAD_COUNT)
             .map(|i| {
