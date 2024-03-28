@@ -2,14 +2,14 @@
 This repository is dedicated to finding prime numbers very quickly.
 
 ## Finding 1,000,000 primes in less than 3 seconds ✅
-Inspired by [Prime Streaming (PG-13)](https://www.codewars.com/kata/5519a584a73e70fa570005f5)
+Inspired by [Prime Streaming (PG-13)](https://www.codewars.com/kata/prime-streaming-pg-13/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 1000000
 The 1,000,000th prime number is 15,485,863
 Duration: 0.038s
 ```
 ## Finding 50,000,000 primes in less than 3 seconds ✅
-Inspired by [Prime Streaming (NC-17)](https://www.codewars.com/kata/5519a584a73e70fa570005f5)
+Inspired by [Prime Streaming (NC-17)](https://www.codewars.com/kata/prime-streaming-nc-17/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 50000000
 The 50,000,000th prime number is 982,451,653
