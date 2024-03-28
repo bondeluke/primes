@@ -20,3 +20,9 @@ This repository is dedicated to finding prime numbers very quickly.
   - Inspired by [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
 - Finding 100,000,000,000 primes in less than 1 minutes... 🔲 
   - Inspired by [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
+
+## Techniques
+- Sieve of Eratosthenes
+- Segemented Sieve
+- Wheel Factorazation
+- Parallelization
