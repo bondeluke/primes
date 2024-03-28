@@ -1,5 +1,3 @@
-// https://www.codewars.com/kata/59122604e5bc240817000016
-
 use std::sync::Arc;
 use std::thread;
 use std::thread::JoinHandle;
@@ -102,7 +100,7 @@ impl PrimeIterator {
             }
         }
 
-        println!("Last prime added to acr_primes was {}", self.primes[self.primes.len() - 1]);
+        //println!("Last prime added to acr_primes was {}", self.primes[self.primes.len() - 1]);
         self.arc_primes = Arc::new(self.primes.clone());
     }
 
