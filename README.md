@@ -38,25 +38,25 @@ In progress...
 In progress...
 ## Parallelization
 ```rust
-    fn extend_in_parallel(&mut self) {
-        const THREAD_COUNT: usize = 128;
-        (0..THREAD_COUNT)
-            .map(|i| {
-                let segment = self.segment;
-                let sieve = self.sieve.clone();
-                let wheel = Arc::clone(&self.wheel);
-                let primes = Arc::clone(&self.arc_primes);
-                let next_spoke = Arc::clone(&self.next_spoke);
-                thread::spawn(move || {
-                    PrimeIterator::extend(segment + i, sieve, wheel, primes, next_spoke)
-                })
+fn extend_in_parallel(&mut self) {
+    const THREAD_COUNT: usize = 128;
+    (0..THREAD_COUNT)
+        .map(|i| {
+            let segment = self.segment;
+            let sieve = self.sieve.clone();
+            let wheel = Arc::clone(&self.wheel);
+            let primes = Arc::clone(&self.arc_primes);
+            let next_spoke = Arc::clone(&self.next_spoke);
+            thread::spawn(move || {
+                PrimeIterator::extend(segment + i, sieve, wheel, primes, next_spoke)
             })
-            .collect::<Vec<JoinHandle<Vec<usize>>>>()
-            .into_iter()
-            .for_each(|handle| {
-                self.primes.extend(handle.join().unwrap())
-            });
+        })
+        .collect::<Vec<JoinHandle<Vec<usize>>>>()
+        .into_iter()
+        .for_each(|handle| {
+            self.primes.extend(handle.join().unwrap())
+        });
 
-        self.segment += THREAD_COUNT;
-    }
+    self.segment += THREAD_COUNT;
+}
 ```
