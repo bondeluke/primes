@@ -16,13 +16,13 @@ The 50,000,000th prime number is 982,451,653
 Duration: 0.567s
 ```
 ## Finding 100,000,000,000 primes in less than 3 minutes...🔲
-Inspired by this post on Reddit: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
+Inspired by this Reddit post: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 100000000000
 memory allocation of 30064771072 bytes failed
 ```
 ## Finding 100,000,000,000 primes in less than 1 minutes... 🔲 
-Inspired by this post on Reddit: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
+Inspired by this Reddit post: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 100000000000
 memory allocation of 30064771072 bytes failed
