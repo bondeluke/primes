@@ -11,7 +11,7 @@ fn main() {
 
     let count: usize = match args.len() > 1 {
         true => args[1].parse::<usize>().unwrap(),
-        false => 1_000_000,
+        false => 50_000_000,
     };
 
     let thread_count: usize = match args.len() > 2 {
@@ -21,7 +21,7 @@ fn main() {
 
     let start_time = Instant::now();
     let mut prime_iterator = stream(thread_count);
-    for _ in 1..count {
+    for _ in 0..count {
         prime_iterator.next();
     }
     let prime = prime_iterator.next().unwrap();
