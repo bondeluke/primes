@@ -8,24 +8,19 @@ PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 1000000
 The 1,000,000th prime number is 15,485,863
 Duration: 0.013s
 ```
-## Finding 5 million primes in less than 3 seconds ✅
+## Finding 50 million primes in less than 3 seconds ✅
 Inspired by [Prime Streaming (NC-17)](https://www.codewars.com/kata/prime-streaming-nc-17/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 50000000
 The 50,000,000th prime number is 982,451,653
 Duration: 0.567s
 ```
-## Finding 100 billion primes in less than 3 minutes...🔲
+## Finding 100 billion primes in less than 3 minutes ❌
 Inspired by this Reddit post: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
 ```ps
 PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 100000000000
-memory allocation of 30064771072 bytes failed
-```
-## Finding 100 billion primes in less than 1 minutes... 🔲 
-Inspired by this Reddit post: [Find First 100 Billion Primes](https://www.reddit.com/r/learnprogramming/comments/du8bii/find_first_100_billion_primes/)
-```ps
-PS C:\Users\Luke\projects\primes> .\target\release\generate_primes.exe 100000000000
-memory allocation of 30064771072 bytes failed
+The 100,000,000,000th prime number is 2,510,361,116,537
+Duration: 1575.457s
 ```
 
 # Techniques
